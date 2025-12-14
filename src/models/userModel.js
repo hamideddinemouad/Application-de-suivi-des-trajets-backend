@@ -5,8 +5,8 @@ const userSchema = new mongoose.Schema(
         name : String,
         email : String,
         password : String,
-        Role : String
+        role : String
     }
 )
-
-export default userSchema;
+const userModel =  mongoose.model("User", userSchema);
+export default userModel;
