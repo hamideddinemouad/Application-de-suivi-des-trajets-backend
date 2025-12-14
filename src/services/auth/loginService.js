@@ -18,7 +18,8 @@ const loginService = async (requestBody) => {
         const userid = user.id;
         const payload = {
             email : email,
-            id : userid
+            id : userid,
+            role : user.role
         }
         const secretKey = process.env.SECRETKEY;
         if(!secretKey){
