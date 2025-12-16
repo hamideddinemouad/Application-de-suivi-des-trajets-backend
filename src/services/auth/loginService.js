@@ -29,7 +29,7 @@ const loginService = async (requestBody) => {
         const token = jwt.sign(payload, secretKey, expiry);
         return token;
     } catch (error) {
-        console.error("loginServiceerr : "  + error.message);
+        // console.error("loginServiceerr : "  + error.message);
         throw error;
     }
 }
