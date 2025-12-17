@@ -2,6 +2,14 @@ import loginService from "../../services/auth/loginService.js";
 const loginController = async (req, res) => {
     try {
         const token =  await loginService(req.body);
+        res.cookie("token", token, {
+            httpOnly: true,
+            secure: false,
+            sameSite: "lax",
+            path: "/",
+            maxAge : 3 * 24 * 60 * 60 * 1000
+        })
+        // console.log(token);
         res.status(200).json({message : "logged in succesfuly", token : token});
         return;
     } catch (error) {
@@ -22,4 +30,5 @@ const loginController = async (req, res) => {
         }
     }
 }
+
 export default loginController;

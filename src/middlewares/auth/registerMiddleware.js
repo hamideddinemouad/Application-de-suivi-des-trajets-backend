@@ -1,12 +1,12 @@
 const registerMiddleware = (req, res, next) => {
     if (!req.body.email || !req.body.password || !req.body.name) {
-        res.json({ error: "all fields are required" });
+        res.status(400).json({ error: "all fields are required" });
         return
     }
     const email = req.body.email;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-        res.json({ error: "invalid email adress" });
+        res.status(400).json({ error: "invalid email adress" });
         return;
     }
     next();
