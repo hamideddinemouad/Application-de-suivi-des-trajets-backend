@@ -1,6 +1,11 @@
-import mongoose from "mongoose";
+import mongoose, { mongo } from "mongoose";
 
-const truckModel = new mongoose.Schema({
-    plateNumber : Number,
-    mileage : Number
-})
+const truckSchema = new mongoose.Schema(
+    {
+        plateNumber: String,
+    },
+    {
+        timestamps: true,
+    })
+const truckModel = mongoose.model("truckModel", truckSchema);
+export default truckModel;

@@ -22,7 +22,7 @@ app.use(cookieParser());
 
 app.use("/api/auth/login", loginRoutes);
 app.use("/api/auth/register", registerRoutes);
-app.use("/api/admin", adminRoutes);
+app.use("/api/dashboard/admin", adminRoutes);
 
 app.listen(PORT, () => {
     console.log("http://localhost:" + PORT + "/");
@@ -32,6 +32,8 @@ app.listen(PORT, () => {
 app.get("/", (req, res) => {
     res.json("listening on port " + PORT)
 });
+
+
 
 
 
