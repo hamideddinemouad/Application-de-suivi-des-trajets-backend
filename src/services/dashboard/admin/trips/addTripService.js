@@ -1,4 +1,4 @@
-import tripModel from "../../../models/tripModel";
+import tripModel from "../../../../models/tripModel.js";
 export default async function  addTripService(requestBody){
     //     origin: String,
     // destination: String,
@@ -9,8 +9,6 @@ export default async function  addTripService(requestBody){
     const destination = requestBody.destination;
     const truck = requestBody.truck;
     const driver = requestBody.driver;
-    const status = requestBody.status;
 
-    await tripModel.create({origin, destination, truck, driver, status});
-    
+    await tripModel.create({origin, destination, truck, driver});
 }

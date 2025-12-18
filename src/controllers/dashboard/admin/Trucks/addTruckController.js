@@ -1,4 +1,4 @@
-import addTruckService from "../../../../services/dashboard/admin/Trucks/addTruckService.js"
+import addTruckService from "../../../../services/dashboard/admin/trucks/addTruckService.js"
 
 export default async function addTruckController(req, res){
     try {

@@ -3,9 +3,8 @@ import mongoose from "mongoose";
 const tripSchema = new mongoose.Schema({
     origin: String,
     destination: String,
-    truck: Number,
+    truck: String,
     driver: String,
-    status: String,
 },
     {
         timestamps: true
