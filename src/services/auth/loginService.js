@@ -19,7 +19,8 @@ const loginService = async (requestBody) => {
         const payload = {
             email : email,
             id : userid,
-            role : user.role
+            role : user.role,
+            name : user.name
         }
         const secretKey = process.env.SECRETKEY;
         if(!secretKey){

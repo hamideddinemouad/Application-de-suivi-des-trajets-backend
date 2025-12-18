@@ -7,6 +7,8 @@ import dotenv from "dotenv";
 import cors from "cors";
 import jwt from "jsonwebtoken"
 import cookieParser from "cookie-parser";
+import userModel from "./models/userModel.js";
+import tripModel from "./models/tripModel.js";
 
 dotenv.config();
 const app = express();
@@ -41,6 +43,11 @@ app.get("/api/me", (req, res) => {
     return
 })
 
+app.get("/api/dashboard/driver/assignments", async (req, res) => {
+    const payload = jwt.verify(req.cookies.token, process.env.SECRETKEY);
+    const assignedtrips = await tripModel.find({driver : payload.name});
+    res.json({message : assignedtrips});
+})
 app.get("/", (req, res) => {
     res.json("listening on port " + PORT)
 });

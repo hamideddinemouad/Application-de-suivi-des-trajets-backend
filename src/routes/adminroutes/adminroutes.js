@@ -24,4 +24,6 @@ adminRoutes.get("/trip", getAllTripsController);
 
 adminRoutes.post("/trips", addTripsController);
 
+adminRoutes.get("/stats", adminDashController);
+
 export default adminRoutes;
