@@ -31,15 +31,16 @@ app.listen(PORT, () => {
 
 app.get("/api/me", (req, res) => {
     if(!req.cookies.token){
-        console.log({message : "guest"})
+        // console.log({message : "guest"})
         res.status(200).json({message : "guest"})
         return
     }
     const payload = jwt.verify(req.cookies.token, process.env.SECRETKEY);
-    console.log({message : payload.role});
+    // console.log({message : payload.role});
     res.status(200).json({message : payload.role});
     return
 })
+
 app.get("/", (req, res) => {
     res.json("listening on port " + PORT)
 });

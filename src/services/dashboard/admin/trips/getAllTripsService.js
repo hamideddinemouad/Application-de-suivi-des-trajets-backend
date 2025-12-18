@@ -1,8 +1,8 @@
 // import getAllDriversService from "../drivers/getAllDriversService.js"
 // import getAllTrucksService from "../Trucks/getAllTrucksService.js"
+import tripModel from "../../../../models/tripModel.js";
 
 export default async function getAllTripsService(){
-    // const trucks = await getAllTrucksService();
-    // const drivers = await getAllDriversService();
-    // return {trucks : trucks, drivers : drivers};
+    const trips = await tripModel.find();
+    return trips;
 }

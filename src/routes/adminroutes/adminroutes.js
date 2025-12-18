@@ -20,7 +20,7 @@ adminRoutes.get("/trucks/", getAllTrucks);
 
 adminRoutes.get("/drivers", getAllDriversController)
 
-adminRoutes.get("/trips", getAllTripsController);
+adminRoutes.get("/trip", getAllTripsController);
 
 adminRoutes.post("/trips", addTripsController);
 
